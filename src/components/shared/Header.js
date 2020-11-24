@@ -24,9 +24,8 @@ const Header = () => {
 
         <div className={"menu-links"}>
           <Link to="/">Home</Link>
-          <Link to="/trending">Trending</Link>
-          <Link to="/top">Top Rivalries</Link>
-          <Link to="/create">Create</Link>
+          <Link to="/login">Login</Link>
+          <Link to="/gerenciar">Gerenciar Salas</Link>
         </div>
 
         <div>
