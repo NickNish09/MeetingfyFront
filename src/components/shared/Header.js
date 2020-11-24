@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Headroom from "react-headroom";
-// import logo from "../../assets/thunder.png";
+import logo from "../../assets/thunder.png";
 
 import { Button, Divider, Drawer } from "antd";
 import { Link } from "react-router-dom";
@@ -18,9 +18,9 @@ const Header = () => {
   return (
     <Headroom>
       <div className={"menu-navbar"}>
-        {/*<Link to="/">*/}
-        {/*  <img src={logo} className={"logo-img"} />*/}
-        {/*</Link>*/}
+        <Link to="/">
+          <img src={logo} className={"logo-img"} />
+        </Link>
 
         <div className={"menu-links"}>
           <Link to="/">Home</Link>
