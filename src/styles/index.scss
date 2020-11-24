@@ -1,0 +1,136 @@
+$primary: #0b1622;
+$primary_light: #151f2e;
+$primary_lighter: #152232;
+$secondary: #4787cc;
+$white: #ededed;
+$light: #a0b1c5;
+$lighter: #8596a5;
+$light_dark: #505963;
+
+@import '../../node_modules/antd/dist/antd.css';
+@import '~include-media/dist/include-media';
+$breakpoints: (phone_sm: 576px, //xs
+        phone: 768px, //sm
+        tablet: 992px, //md
+        desktop: 1200px, //lg
+        desktop_large: 1600px //xl
+);
+@import 'Home';
+@import 'auth';
+@import 'menu';
+
+html, body {
+  background-color: $primary;
+}
+
+*{
+  font-family: 'Open Sans', sans-serif;
+}
+
+.ml-10{
+  margin-left: 10px;
+}
+
+.mt-5{
+  margin-top: 5px;
+}
+
+.mt-10{
+  margin-top: 10px;
+}
+
+.mt-15{
+  margin-top: 15px;
+}
+
+.mb-5{
+  margin-bottom: 5px;
+}
+
+.mr-5{
+  margin-right: 5px;
+}
+
+.mr-10{
+  margin-right: 10px;
+}
+
+.mb-10{
+  margin-bottom: 10px;
+}
+
+.text-light{
+  color: $light;
+}
+
+.d-grid{
+  display: grid;
+}
+
+.d-flex{
+  display: flex;
+}
+
+.f-row{
+  flex-direction: row;
+}
+
+.f-column{
+  flex-direction: column;
+}
+
+.align-items-center{
+  align-items: center;
+}
+
+.justify-content-center{
+  justify-content: center;
+}
+
+.styles_header__3PFGX{
+  background-color: #242c45;
+}
+
+.logo-img{
+  height: 5em;
+  width: 5em;
+  padding: 1.5em;
+  object-fit: contain;
+}
+
+.all-light{
+  * {
+    color: $light
+  }
+}
+
+.responsive-text{
+  width: 100%;
+}
+
+.container{
+  height: 150vh;
+  margin: 0 15em;
+
+  @include media("<phone") {
+    margin: 0 15px;
+  }
+
+  @include media(">=phone", "<tablet") {
+    margin: 0 55px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include media(">=tablet", "<desktop") {
+    margin: 0 155px;
+  }
+
+  @include media(">=desktop", "<desktop_large") {
+    margin: 0 185px;
+  }
+
+  @include media(">=desktop_large") {
+    margin: 0 205px;
+  }
+}

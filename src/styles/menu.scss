@@ -1,0 +1,168 @@
+.menu-navbar{
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: $primary_lighter;
+  @include media("<=phone") {
+    justify-content: space-between;
+  }
+}
+
+.menu-links {
+  @include media("<=phone") {
+    display: none;
+  }
+}
+
+.menu-links a{
+  margin: 0 1em;
+  color: $light;
+}
+
+.search-container{
+  padding: 1em;
+  background-color: $primary_lighter;
+  @include media("<phone") {
+    width: 90%;
+  }
+
+  @include media(">=phone", "<tablet") {
+    width: 90%;
+  }
+
+  @include media(">=tablet", "<desktop") {
+    width: 80%;
+  }
+
+  @include media(">=desktop", "<desktop_large") {
+    width: 50%;
+  }
+
+  @include media(">=desktop_large") {
+    width: 50%;
+  }
+}
+
+.search-icon{
+  font-size: 18px;
+  color: $primary_lighter;
+}
+
+.search-input{
+  width: 100%;
+  background-color: $primary !important;
+}
+
+.search-dropdown{
+  background-color: $primary;
+
+  div {
+    color: $light;
+  }
+  .ant-select-item-option {
+    padding: 1em;
+  }
+
+  .ant-select-item-option-active:not(.ant-select-item-option-disabled){
+    background-color: $light_dark;
+  }
+}
+
+.search-drawer{
+
+  p {
+    color: $light;
+  }
+  .ant-drawer-content{
+    background-color: transparent !important;
+  }
+
+  .ant-drawer-body{
+    padding-top: 7em !important;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .ant-drawer-content-wrapper {
+    height: auto !important;
+  }
+
+  .ant-drawer-close{
+    color: $light;
+  }
+}
+
+.responsive-drawer {
+  .ant-drawer-body{
+    padding: 0 !important;
+    background-color: $primary_light;
+  }
+  .ant-drawer-content-wrapper {
+    height: auto !important;
+  }
+
+  .ant-drawer-close{
+    color: $light;
+  }
+}
+
+.menu-responsive{
+  display: none;
+  background-color: $primary_light;
+  @include media("<=phone"){
+    display: inline;
+  }
+}
+
+.menu-links-responsive{
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.menu-links-responsive a{
+  margin: 1em 1em;
+  color: $light;
+}
+
+.dropdown-profile{
+  margin-top: -15px;
+  @include media("<=phone") {
+    display: none;
+  }
+}
+
+.menu-login{
+  color: rgba(0,0,0,0.65);
+  @include media("<=phone"){
+    display: none;
+  }
+}
+
+.menu-login-responsive{
+  color: $light;
+  align-self: flex-start;
+}
+
+.divider-responsive{
+  margin-top: 0.6em;
+  color: $light;
+  border-top: 1px solid $light;
+}
+
+.menu-search-icon{
+  font-size: 18px;
+  color: $light;
+}
+
+.menu-menu-icon{
+  font-size: 22px;
+  color: $light;
+  display: none;
+  @include media("<=phone"){
+    display: inline;
+  }
+}

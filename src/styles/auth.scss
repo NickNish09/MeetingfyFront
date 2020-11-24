@@ -1,0 +1,61 @@
+.auth-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5em 0;
+}
+
+.auth-card{
+  background-color: $primary_lighter;
+
+  @include media("<phone") {
+    width: 90%;
+  }
+
+  @include media(">=phone", "<tablet") {
+    width: 85%;
+  }
+
+  @include media(">=tablet", "<desktop") {
+    width: 55%;
+  }
+
+  @include media(">=desktop", "<desktop_large") {
+    width: 45%;
+  }
+
+  @include media(">=desktop_large") {
+    width: 33%;
+  }
+}
+
+.auth-title{
+  color: $light;
+}
+
+.ant-form-item-has-error .ant-input, .ant-form-item-has-error .ant-input-affix-wrapper{
+  background-color: $primary_light;
+  color: $light;
+}
+.ant-form-item-has-error .ant-input:hover, .ant-form-item-has-error .ant-input-affix-wrapper:hover{
+  background-color: $primary_light;
+  color: $light;
+}
+
+.auth-input{
+  background-color: $primary_light;
+  color: $light;
+}
+
+.auth-input input{
+  background-color: $primary_light;
+  color: $light;
+}
+
+.auth-submit{
+  background-color: $primary_light;
+  color: $light;
+  border-color: $light;
+  width: 100%;
+}
