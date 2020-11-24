@@ -18,6 +18,7 @@ $breakpoints: (phone_sm: 576px, //xs
 @import 'Home';
 @import 'auth';
 @import 'menu';
+@import 'room';
 
 html, body {
   background-color: $primary;
@@ -85,6 +86,10 @@ html, body {
 
 .justify-content-center{
   justify-content: center;
+}
+
+.justify-content-between{
+  justify-content: space-between;
 }
 
 .styles_header__3PFGX{

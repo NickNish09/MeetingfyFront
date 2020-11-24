@@ -23,8 +23,7 @@ const Header = () => {
         </Link>
 
         <div className={"menu-links"}>
-          <Link to="/">Home</Link>
-          <Link to="/login">Login</Link>
+          <Link to="/">Salas</Link>
           <Link to="/gerenciar">Gerenciar Salas</Link>
         </div>
 
@@ -54,22 +53,10 @@ const Header = () => {
         <div className={"menu-responsive"}>
           <div className={"menu-links-responsive"}>
             <Link to="/" onClick={dismissDrawer}>
-              Home
+              Salas
             </Link>
-            <Link to="/trending" onClick={dismissDrawer}>
-              Trending
-            </Link>
-            <Link to="/top" onClick={dismissDrawer}>
-              Top Rivalries
-            </Link>
-            <Link to="/create" onClick={dismissDrawer}>
-              Create
-            </Link>
-            <Link to={"/profile"} onClick={dismissDrawer}>
-              Profile
-            </Link>
-            <Link to={"/your-rivalries"} onClick={dismissDrawer}>
-              Your Rivalries
+            <Link to="/gerenciar" onClick={dismissDrawer}>
+              Gerenciar Salas
             </Link>
             <Divider className={"divider-responsive"} />
             {isAuthenticated() ? (
