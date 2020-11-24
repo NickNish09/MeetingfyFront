@@ -55,20 +55,8 @@ const Header = () => {
             <Link to="/" onClick={dismissDrawer}>
               Home
             </Link>
-            <Link to="/trending" onClick={dismissDrawer}>
-              Trending
-            </Link>
-            <Link to="/top" onClick={dismissDrawer}>
-              Top Rivalries
-            </Link>
-            <Link to="/create" onClick={dismissDrawer}>
-              Create
-            </Link>
-            <Link to={"/profile"} onClick={dismissDrawer}>
-              Profile
-            </Link>
-            <Link to={"/your-rivalries"} onClick={dismissDrawer}>
-              Your Rivalries
+            <Link to="/gerenciar" onClick={dismissDrawer}>
+              Gerenciar Salas
             </Link>
             <Divider className={"divider-responsive"} />
             {isAuthenticated() ? (
