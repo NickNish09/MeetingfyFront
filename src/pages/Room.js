@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {Typography, Divider} from "antd";
 import {getRoom} from "../services/room";
+import { UserOutlined } from '@ant-design/icons';
 
 const { Title } = Typography;
 
@@ -20,7 +21,13 @@ const Room = ({match}) => {
   return(
     loading ? <div><p>Loading...</p></div> :
       <div className={'container'}>
-        <Title className={'title mt-15'}>{room.name}</Title>
+        <div className={'d-flex justify-content-between align-items-center'}>
+          <Title className={'title mt-15'}>{room.name}</Title>
+          <div className={'d-flex align-items-center'}>
+            <p className={'text-capability'}>{room.capability}</p>
+            <UserOutlined className={'room-icon'}/>
+          </div>
+        </div>
         <Divider className={'divider'}/>
       </div>
   )

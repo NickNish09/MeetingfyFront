@@ -18,6 +18,7 @@ $breakpoints: (phone_sm: 576px, //xs
 @import 'Home';
 @import 'auth';
 @import 'menu';
+@import 'room';
 
 html, body {
   background-color: $primary;

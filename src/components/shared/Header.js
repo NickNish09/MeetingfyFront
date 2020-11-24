@@ -23,7 +23,7 @@ const Header = () => {
         </Link>
 
         <div className={"menu-links"}>
-          <Link to="/">Home</Link>
+          <Link to="/">Salas</Link>
           <Link to="/gerenciar">Gerenciar Salas</Link>
         </div>
 
@@ -53,7 +53,7 @@ const Header = () => {
         <div className={"menu-responsive"}>
           <div className={"menu-links-responsive"}>
             <Link to="/" onClick={dismissDrawer}>
-              Home
+              Salas
             </Link>
             <Link to="/gerenciar" onClick={dismissDrawer}>
               Gerenciar Salas
