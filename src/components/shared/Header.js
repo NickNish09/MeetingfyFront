@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Headroom from "react-headroom";
-import logo from "../../assets/thunder.png";
+import logo from "../../assets/meeting.png";
 
 import { Button, Divider, Drawer } from "antd";
 import { Link } from "react-router-dom";

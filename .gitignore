@@ -10,7 +10,7 @@
 .eslintcache
 # production
 /build
-
+.netlify/
 # misc
 .DS_Store
 .env.local

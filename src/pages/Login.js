@@ -51,6 +51,8 @@ const Login = ({ history }) => {
               name="basic"
               initialValues={{
                 remember: true,
+                email: 'user@test.com',
+                password: '123456'
               }}
               onFinish={onFinish}
               onFinishFailed={onFinishFailed}
@@ -60,7 +62,7 @@ const Login = ({ history }) => {
                 rules={[
                   {
                     required: true,
-                    message: "Please input your email!",
+                    message: "Coloque seu email",
                   },
                 ]}
             >
@@ -76,7 +78,7 @@ const Login = ({ history }) => {
                 rules={[
                   {
                     required: true,
-                    message: "Please input your password!",
+                    message: "Coloque sua senha",
                   },
                 ]}
             >

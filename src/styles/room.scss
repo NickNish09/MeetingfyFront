@@ -8,3 +8,11 @@
   font-size: 28px;
   margin: 0 0.2em;
 }
+
+.btn-agendar {
+  background-color: $primary;
+}
+
+.btn-agendar:hover {
+  background-color: $secondary;
+}
