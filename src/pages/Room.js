@@ -2,6 +2,8 @@ import React, {useState, useEffect} from "react";
 import {Typography, Divider} from "antd";
 import {getRoom} from "../services/room";
 import { UserOutlined } from '@ant-design/icons';
+import Calendar from '../components/rooms/Calendar';
+import moment from 'moment';
 
 const { Title } = Typography;
 
@@ -29,6 +31,13 @@ const Room = ({match}) => {
           </div>
         </div>
         <Divider className={'divider'}/>
+        <Calendar eventsList={
+          [{
+            'title': 'My event',
+            'start': moment().toDate(),
+            'end': moment().add(2, "hours").toDate()
+          }]
+        }/>
       </div>
   )
 }
