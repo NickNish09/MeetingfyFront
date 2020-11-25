@@ -57,7 +57,7 @@ const RoomCalendar = ({eventsList, roomId}) => {
         <strong>{event.title}</strong>
         <div className={'d-flex justify-content-end inner-event'}>
           <DeleteOutlined className={'mr-5'} onClick={() => handleDelete(event.id)}/>
-          <EditOutlined onClick={() => handleEdit(event.id)}/>
+          {/*<EditOutlined onClick={() => handleEdit(event.id)}/>*/}
         </div>
       </span>
     )
@@ -78,6 +78,14 @@ const RoomCalendar = ({eventsList, roomId}) => {
           max={moment().startOf('day').add(18, 'hours').toDate()}
           onSelectSlot={handleSelect}
           components={{event: Event}}
+          messages={{
+            month: 'Mês',
+            day: 'Dia',
+            today: 'Hoje',
+            week: 'Semana',
+            previous: '<<',
+            next: '>>'
+          }}
         />
       </div>
     </Card>
