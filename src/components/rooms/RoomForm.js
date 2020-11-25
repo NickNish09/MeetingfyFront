@@ -5,6 +5,7 @@ import {createRoom} from "../../services/room";
 
 const RoomForm = ({setRooms, setVisible}) => {
   const [loading, setLoading] = useState(false);
+  const [form] = Form.useForm();
 
   const onFinish = (values) => {
     console.log("Success:", values);
@@ -13,10 +14,12 @@ const RoomForm = ({setRooms, setVisible}) => {
       console.log(response.data);
       setLoading(false);
       setRooms(prevRooms => [...prevRooms, response.data]);
+      form.resetFields();
       setVisible(false);
       openNotificationWithIcon('success', 'Sala Criada', `${response.data.name} foi criada.`)
     }).catch(error => {
       console.log(error.response.data);
+      openNotificationWithIcon('error', 'Erro ao criar sala', error.response.data.error);
       setLoading(false);
     });
   };
@@ -28,11 +31,9 @@ const RoomForm = ({setRooms, setVisible}) => {
   return <div>
     <Form
         name="basic"
-        initialValues={{
-          remember: true,
-        }}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
+        form={form}
     >
       <Form.Item
           name="name"
