@@ -59,7 +59,7 @@ const RoomForm = ({setRooms, setVisible}) => {
             },
           ]}
       >
-        <InputNumber min={1} placeholder={'capacidade'}/>
+        <InputNumber min={1} placeholder={'capacidade'} className={'w-100'}/>
       </Form.Item>
 
       <Form.Item className={"mt-15"}>
