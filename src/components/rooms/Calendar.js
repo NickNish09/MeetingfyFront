@@ -30,7 +30,7 @@ const RoomCalendar = ({eventsList, roomId}) => {
           [...prevEvents, {start, end, title, id, user_id}] // appends the event to state
         ));
       }).catch(error => {
-        console.log(error.response);
+        console.log(error.response.data);
         openNotificationWithIcon('error', 'Erro ao marcar reunião', error.response.data.error);
       });
     }
@@ -42,7 +42,7 @@ const RoomCalendar = ({eventsList, roomId}) => {
         openNotificationWithIcon('info', 'Reunião desmarcada', response.data.msg)
         removeEventById(meetingId);
       }).catch(error => {
-        openNotificationWithIcon('error', 'Erro ao desmarcar reunião', error.response.error)
+        openNotificationWithIcon('error', 'Erro ao desmarcar reunião', error.response.data.error)
       });
     }
   };
