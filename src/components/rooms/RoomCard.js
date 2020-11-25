@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 
 const RoomCard = ({roomId, title, capability, history}) => {
   return(
-    <Card title={title} >
+    <Card title={title} className={'mb-15 ml-5 mr-5'}>
       <div className={'d-flex justify-content-between'}>
         <div>
           <UserOutlined/>
