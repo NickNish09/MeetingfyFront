@@ -16,3 +16,7 @@ export const createEvent = (room_id, meeting_start, meeting_end, title) => {
     room_id
   })
 };
+
+export const deleteEvent = (meetingId) => {
+  return api.delete(`meetings/${meetingId}`);
+};
