@@ -5,7 +5,7 @@ Cliente para sistema MeetingFy. Disponível em: https://meetingfy.netlify.app/
 ## Como Utilizar localmente
 - Clone este repositório:
 
-```git clone git@github.com:NickNish09/MeetingfyFront.git```
+```git clone https://github.com/NickNish09/MeetingfyFront.git```
 
 - Entre na pasta dele:
 
