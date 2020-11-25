@@ -13,7 +13,9 @@ const RoomCard = ({roomId, title, capability, history}) => {
         </div>
         <Button type="primary" icon={<CalendarOutlined />} size={'large'} onClick={() => {
           history.push(`/sala/${roomId}`);
-        }}>
+        }}
+          className={'btn-agendar'}
+        >
           Agendar
         </Button>
       </div>
