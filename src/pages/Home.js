@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import {getRooms} from "../services/room";
 import RoomCard from "../components/rooms/RoomCard";
-import { Row, Col, Typography, Divider } from 'antd';
+import { Row, Col, Typography, Divider, Button, Drawer } from 'antd';
+import {PlusOutlined} from "@ant-design/icons";
+import RoomForm from "../components/rooms/RoomForm";
 
 const { Title } = Typography;
 
 const Home = () => {
   const [rooms, setRooms] = useState([]);
+  const [visible, setVisible] = useState(false);
+
   useEffect(() => {
     getRooms().then((response) => {
       setRooms(response.data);
@@ -14,9 +18,22 @@ const Home = () => {
       console.log(error);
     });
   }, []);
+
+  const showDrawer = () => {
+    setVisible(true);
+  };
+
+  const onClose = () => {
+    setVisible(false);
+  };
   return(
       <div className={'container'}>
-        <Title className={'title mt-15'}>Salas</Title>
+        <div className={'d-flex justify-content-between align-items-center'}>
+          <Title className={'title mt-15'}>Salas</Title>
+          <Button type="success" icon={<PlusOutlined />} size={'large'} onClick={showDrawer}>
+            Nova Sala
+          </Button>
+        </div>
         <Divider className={'divider'} />
         <Row>
           {
@@ -27,6 +44,16 @@ const Home = () => {
             ))
           }
         </Row>
+
+        <Drawer
+            title="Nova Sala"
+            placement="right"
+            closable={false}
+            onClose={onClose}
+            visible={visible}
+        >
+          <RoomForm setRooms={setRooms} setVisible={setVisible}/>
+        </Drawer>
       </div>
   )
 }
