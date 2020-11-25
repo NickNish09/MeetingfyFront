@@ -85,12 +85,12 @@ const Login = ({ history }) => {
 
             <Form.Item name="remember" valuePropName="checked">
               <Checkbox>
-                <span className={"text-light"}>Remember me</span>
+                <span className={"text-light"}>Lembrar-me</span>
               </Checkbox>
             </Form.Item>
 
             <Link to={"/register"} className={"text-light"}>
-              New user? Register
+              Novo usuário? Cadastrar-se
             </Link>
 
             <Form.Item className={"mt-15"}>

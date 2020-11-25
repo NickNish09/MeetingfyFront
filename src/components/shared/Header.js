@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 import { MenuOutlined } from "@ant-design/icons";
 import { isAuthenticated } from "../../services/auth";
-import { TOKEN_KEY } from "../../config/constants";
+import {CLIENT_KEY, TOKEN_KEY, UID_KEY} from "../../config/constants";
 
 const Header = () => {
   const [openResponsiveMenu, setOpenResponsiveMenu] = useState(false);
@@ -29,7 +29,18 @@ const Header = () => {
 
         <div>
           {isAuthenticated() ? (
-              <div></div>
+            <Button
+              onClick={() => {
+                localStorage.removeItem(TOKEN_KEY);
+                localStorage.removeItem(CLIENT_KEY);
+                localStorage.removeItem(UID_KEY);
+                window.location.reload();
+              }}
+              type={"link"}
+              className={"menu-login-responsive"}
+            >
+              Sair
+            </Button>
           ) : (
             <Link to={"/login"} className={"menu-login text-light"}>
               Login
@@ -63,12 +74,14 @@ const Header = () => {
               <Button
                 onClick={() => {
                   localStorage.removeItem(TOKEN_KEY);
+                  localStorage.removeItem(CLIENT_KEY);
+                  localStorage.removeItem(UID_KEY);
                   window.location.reload();
                 }}
                 type={"link"}
                 className={"menu-login-responsive"}
               >
-                Leave
+                Sair
               </Button>
             ) : (
               <Link
