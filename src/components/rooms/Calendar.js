@@ -4,6 +4,7 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 import moment from 'moment';
 import { Card } from 'antd';
 import {createEvent} from "../../services/room";
+import {openNotificationWithIcon} from "../../helpers/notifications";
 const localizer = momentLocalizer(moment);
 
 const RoomCalendar = ({eventsList, roomId}) => {
@@ -18,8 +19,8 @@ const RoomCalendar = ({eventsList, roomId}) => {
           [...prevEvents, {start, end, title}] // appends the event to state
         ));
       }).catch(error => {
-        console.log(error.response.data.error);
-        alert(error.response.data.error);
+        console.log(error.response);
+        openNotificationWithIcon('error', 'Erro ao marcar reunião', error.response.data.error);
       });
     }
   };
@@ -37,7 +38,7 @@ const RoomCalendar = ({eventsList, roomId}) => {
           defaultDate={moment().toDate()}
           min={moment().startOf('day').add(8, 'hours').toDate()}
           max={moment().startOf('day').add(18, 'hours').toDate()}
-          onSelectEvent={event => alert(event.title)}
+          onSelectEvent={event => openNotificationWithIcon('info', event.title)}
           onSelectSlot={handleSelect}
         />
       </div>
