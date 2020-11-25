@@ -4,7 +4,8 @@ import { USER_KEY } from "../config/constants";
 export const CurrentUserContext = createContext();
 
 const CurrentUserProvider = ({ children }) => {
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem(USER_KEY)));
+  // const [user, setUser] = useState(JSON.parse(localStorage.getItem(USER_KEY)));
+  const [user, setUser] = useState({});
 
   const currentUserObject = {
     user: user,

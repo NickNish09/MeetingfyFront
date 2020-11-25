@@ -15,11 +15,27 @@ const Room = ({match}) => {
     getRoom(match.params.roomId).then(response => {
       setRoom(response.data);
       setLoading(false);
+      console.log(response.data);
     }).catch(error => {
       console.log(error);
       setLoading(false);
     });
   }, []);
+
+  const eventsFormated = () => {
+    if(room === {}){
+      return [{
+        'title': 'My event',
+        'start': moment().toDate(),
+        'end': moment().add(2, "hours").toDate()
+      }]
+    }
+    return room.meetings.map((meeting) => ({
+      'title': meeting.title,
+      'start': moment(meeting.meeting_start).toDate(),
+      'end': moment(meeting.meeting_end).toDate()
+    }))
+  }
   return(
     loading ? <div><p>Loading...</p></div> :
       <div className={'container'}>
@@ -32,12 +48,10 @@ const Room = ({match}) => {
         </div>
         <Divider className={'divider'}/>
         <Calendar eventsList={
-          [{
-            'title': 'My event',
-            'start': moment().toDate(),
-            'end': moment().add(2, "hours").toDate()
-          }]
-        }/>
+          eventsFormated()
+        }
+        roomId={room.id}
+        />
       </div>
   )
 }
