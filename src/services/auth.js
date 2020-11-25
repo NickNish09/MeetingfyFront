@@ -10,7 +10,7 @@ export const isAuthenticated = () => {
 
 export const sendLoginRequest = (values) => {
   const { email, password } = values;
-  return api.post("auth/authenticate", {
+  return api.post("auth/sign_in", {
     email,
     password,
   });
@@ -18,7 +18,7 @@ export const sendLoginRequest = (values) => {
 
 export const sendRegisterRequest = (values) => {
   const { email, password, name } = values;
-  return api.post("auth/register", {
+  return api.post("auth/", {
     email,
     password,
     name,

@@ -2,6 +2,8 @@ import React, {useState, useEffect} from "react";
 import {Typography, Divider} from "antd";
 import {getRoom} from "../services/room";
 import { UserOutlined } from '@ant-design/icons';
+import Calendar from '../components/rooms/Calendar';
+import moment from "moment-timezone";
 
 const { Title } = Typography;
 
@@ -13,11 +15,30 @@ const Room = ({match}) => {
     getRoom(match.params.roomId).then(response => {
       setRoom(response.data);
       setLoading(false);
+      console.log(response.data);
     }).catch(error => {
       console.log(error);
       setLoading(false);
     });
   }, []);
+
+  const eventsFormated = () => {
+    if(room === {}){
+      return [{
+        'title': 'My event',
+        'start': moment().toDate(),
+        'end': moment().add(2, "hours").toDate()
+      }]
+    }
+    return room.meetings.map((meeting) => {
+      return {
+        'title': meeting.title,
+        'start': moment(meeting.meeting_start.toString().slice(0, -1)).toDate(),
+        'end': moment(meeting.meeting_end.toString().slice(0, -1)).toDate(),
+        'id': meeting.id,
+        'user_id': meeting.user_id}
+      })
+  };
   return(
     loading ? <div><p>Loading...</p></div> :
       <div className={'container'}>
@@ -29,6 +50,11 @@ const Room = ({match}) => {
           </div>
         </div>
         <Divider className={'divider'}/>
+        <Calendar eventsList={
+          eventsFormated()
+        }
+        roomId={room.id}
+        />
       </div>
   )
 }
