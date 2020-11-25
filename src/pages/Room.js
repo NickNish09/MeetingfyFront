@@ -3,7 +3,7 @@ import {Typography, Divider} from "antd";
 import {getRoom} from "../services/room";
 import { UserOutlined } from '@ant-design/icons';
 import Calendar from '../components/rooms/Calendar';
-import moment from 'moment';
+import moment from "moment-timezone";
 
 const { Title } = Typography;
 
@@ -30,12 +30,15 @@ const Room = ({match}) => {
         'end': moment().add(2, "hours").toDate()
       }]
     }
-    return room.meetings.map((meeting) => ({
-      'title': meeting.title,
-      'start': moment(meeting.meeting_start).toDate(),
-      'end': moment(meeting.meeting_end).toDate()
-    }))
-  }
+    return room.meetings.map((meeting) => {
+      return {
+        'title': meeting.title,
+        'start': moment(meeting.meeting_start.toString().slice(0, -1)).toDate(),
+        'end': moment(meeting.meeting_end.toString().slice(0, -1)).toDate(),
+        'id': meeting.id,
+        'user_id': meeting.user_id}
+      })
+  };
   return(
     loading ? <div><p>Loading...</p></div> :
       <div className={'container'}>
