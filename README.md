@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# MeetingFy - Client
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Cliente para sistema MeetingFy. Disponível em: https://meetingfy.netlify.app/
 
-## Available Scripts
+## Como Utilizar localmente
+- Clone este repositório:
 
-In the project directory, you can run:
+```git clone git@github.com:NickNish09/MeetingfyFront.git```
 
-### `yarn start`
+- Entre na pasta dele:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```cd MeetingfyFront```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Execute o yarn install para instalar dependências:
 
-### `yarn test`
+```yarn install```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Rode o yarn start:
 
-### `yarn build`
+```yarn start```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+o site deve abrir em http://localhost:3000/ (ou http://localhost:3001/ caso o servidor da API esteja
+rodando já). Por padrão este projeto está buscando dados da API de produção (https://meetingfy-api.herokuapp.com/v1)
+. Caso queira trocar para API de desenvolvimento, basta trocar na linha 7 do arquivo
+src/services/api.js a variável baseURL para dev_url:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+export const baseURL = dev_url;
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Features e Breve Descrição
+As features são as mesmas descritas no repositório da API (https://github.com/NickNish09/MeetingfyApi).
 
-### `yarn eject`
+Como usuário autenticado, é possível criar salas, editar salas, deletar salas, ver 
+uma sala específica e marcar reuniões nela através de um calendário.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Há uma tela de Login/Cadastro para realizar a autenticação no sistema. Ressalta-se que existe um **usuário padrão**
+com acesso ao sistema já com email e senha colocados no formulário de login, para facilitar os testes.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Usuário Padrão: email: user@test.com // senha: 123456**
+## Tecnologias Utilizadas
+- **React** 17.0.1
+- **Axios** para requisições
+- **React-Big-Calendar** para View de calendário
+- **AntDesign** para componentes de User Interface (UI)
+- **Sass** para estilizações
+- **Netlify** para hospedagem 
